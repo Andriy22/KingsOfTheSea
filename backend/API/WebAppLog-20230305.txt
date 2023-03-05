@@ -1,0 +1,174 @@
+2023-03-05 20:23:06.741 +02:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-05 20:23:06.780 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [WoTStatsAuth] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+END;
+2023-03-05 20:23:06.794 +02:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+DROP DATABASE [WoTStatsAuth];
+2023-03-05 20:23:07.040 +02:00 [INF] Executed DbCommand (172ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE DATABASE [WoTStatsAuth];
+2023-03-05 20:23:07.072 +02:00 [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [WoTStatsAuth] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+2023-03-05 20:23:07.075 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-05 20:23:07.153 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetRoles] (
+    [Id] nvarchar(450) NOT NULL,
+    [Name] nvarchar(256) NULL,
+    [NormalizedName] nvarchar(256) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetRoles] PRIMARY KEY ([Id])
+);
+2023-03-05 20:23:07.154 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Languages] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(max) NULL,
+    CONSTRAINT [PK_Languages] PRIMARY KEY ([Id])
+);
+2023-03-05 20:23:07.155 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetRoleClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [RoleId] nvarchar(450) NOT NULL,
+    [ClaimType] nvarchar(max) NULL,
+    [ClaimValue] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetRoleClaims] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_AspNetRoleClaims_AspNetRoles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [AspNetRoles] ([Id]) ON DELETE CASCADE
+);
+2023-03-05 20:23:07.156 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetUsers] (
+    [Id] nvarchar(450) NOT NULL,
+    [Discriminator] nvarchar(max) NOT NULL,
+    [Nickname] nvarchar(max) NULL,
+    [LastLogIn] datetime2 NULL,
+    [CreationTime] datetime2 NULL,
+    [LanguageId] int NULL,
+    [UserName] nvarchar(256) NULL,
+    [NormalizedUserName] nvarchar(256) NULL,
+    [Email] nvarchar(256) NULL,
+    [NormalizedEmail] nvarchar(256) NULL,
+    [EmailConfirmed] bit NOT NULL,
+    [PasswordHash] nvarchar(max) NULL,
+    [SecurityStamp] nvarchar(max) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    [PhoneNumber] nvarchar(max) NULL,
+    [PhoneNumberConfirmed] bit NOT NULL,
+    [TwoFactorEnabled] bit NOT NULL,
+    [LockoutEnd] datetimeoffset NULL,
+    [LockoutEnabled] bit NOT NULL,
+    [AccessFailedCount] int NOT NULL,
+    CONSTRAINT [PK_AspNetUsers] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_AspNetUsers_Languages_LanguageId] FOREIGN KEY ([LanguageId]) REFERENCES [Languages] ([Id])
+);
+2023-03-05 20:23:07.156 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetUserClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [UserId] nvarchar(450) NOT NULL,
+    [ClaimType] nvarchar(max) NULL,
+    [ClaimValue] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetUserClaims] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_AspNetUserClaims_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);
+2023-03-05 20:23:07.157 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetUserLogins] (
+    [LoginProvider] nvarchar(128) NOT NULL,
+    [ProviderKey] nvarchar(128) NOT NULL,
+    [ProviderDisplayName] nvarchar(max) NULL,
+    [UserId] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_AspNetUserLogins] PRIMARY KEY ([LoginProvider], [ProviderKey]),
+    CONSTRAINT [FK_AspNetUserLogins_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);
+2023-03-05 20:23:07.158 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetUserRoles] (
+    [UserId] nvarchar(450) NOT NULL,
+    [RoleId] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_AspNetUserRoles] PRIMARY KEY ([UserId], [RoleId]),
+    CONSTRAINT [FK_AspNetUserRoles_AspNetRoles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [AspNetRoles] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_AspNetUserRoles_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);
+2023-03-05 20:23:07.159 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetUserTokens] (
+    [UserId] nvarchar(450) NOT NULL,
+    [LoginProvider] nvarchar(128) NOT NULL,
+    [Name] nvarchar(128) NOT NULL,
+    [Value] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetUserTokens] PRIMARY KEY ([UserId], [LoginProvider], [Name]),
+    CONSTRAINT [FK_AspNetUserTokens_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);
+2023-03-05 20:23:07.179 +02:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'ConcurrencyStamp', N'Name', N'NormalizedName') AND [object_id] = OBJECT_ID(N'[AspNetRoles]'))
+    SET IDENTITY_INSERT [AspNetRoles] ON;
+INSERT INTO [AspNetRoles] ([Id], [ConcurrencyStamp], [Name], [NormalizedName])
+VALUES (N'5e38f831-0d40-4010-9c3c-1e5fe94e76ae', N'9da4fa44-0c56-423e-be84-6dcd6eb1ef9a', N'User', N'USER'),
+(N'd821c9ec-df12-4c72-9e92-774a6ee9acd8', N'e357337f-2351-477d-8aeb-2ccc33686732', N'Admin', N'ADMIN');
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'ConcurrencyStamp', N'Name', N'NormalizedName') AND [object_id] = OBJECT_ID(N'[AspNetRoles]'))
+    SET IDENTITY_INSERT [AspNetRoles] OFF;
+2023-03-05 20:23:07.179 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_AspNetRoleClaims_RoleId] ON [AspNetRoleClaims] ([RoleId]);
+2023-03-05 20:23:07.181 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [RoleNameIndex] ON [AspNetRoles] ([NormalizedName]) WHERE [NormalizedName] IS NOT NULL;
+2023-03-05 20:23:07.182 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_AspNetUserClaims_UserId] ON [AspNetUserClaims] ([UserId]);
+2023-03-05 20:23:07.182 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_AspNetUserLogins_UserId] ON [AspNetUserLogins] ([UserId]);
+2023-03-05 20:23:07.182 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_AspNetUserRoles_RoleId] ON [AspNetUserRoles] ([RoleId]);
+2023-03-05 20:23:07.182 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [EmailIndex] ON [AspNetUsers] ([NormalizedEmail]);
+2023-03-05 20:23:07.183 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_AspNetUsers_LanguageId] ON [AspNetUsers] ([LanguageId]);
+2023-03-05 20:23:07.183 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [UserNameIndex] ON [AspNetUsers] ([NormalizedUserName]) WHERE [NormalizedUserName] IS NOT NULL;
+2023-03-05 20:23:07.274 +02:00 [INF] Executed DbCommand (30ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+MERGE [Languages] USING (
+VALUES (@p0, 0),
+(@p1, 1),
+(@p2, 2)) AS i ([Name], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Name])
+VALUES (i.[Name])
+OUTPUT INSERTED.[Id], i._Position;
+2023-03-05 20:23:07.431 +02:00 [INF] User profile is available. Using 'C:\Users\istep\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-03-05 20:23:07.607 +02:00 [INF] Now listening on: https://localhost:7196
+2023-03-05 20:23:07.607 +02:00 [INF] Now listening on: http://localhost:5095
+2023-03-05 20:23:07.607 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-05 20:23:07.607 +02:00 [INF] Hosting environment: Development
+2023-03-05 20:23:07.607 +02:00 [INF] Content root path: C:\Users\istep\Documents\projects\KingsOfTheSea\backend\API
+2023-03-05 20:23:08.215 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger - -
+2023-03-05 20:23:08.253 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger - - - 301 0 - 39.3531ms
+2023-03-05 20:23:08.259 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/index.html - -
+2023-03-05 20:23:08.373 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/index.html - - - 200 - text/html;charset=utf-8 113.5300ms
+2023-03-05 20:23:08.389 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/swagger-ui.css - -
+2023-03-05 20:23:08.389 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/swagger-ui-standalone-preset.js - -
+2023-03-05 20:23:08.389 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/swagger-ui-bundle.js - -
+2023-03-05 20:23:08.389 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7196/_framework/aspnetcore-browser-refresh.js - -
+2023-03-05 20:23:08.391 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7196/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 2.3947ms
+2023-03-05 20:23:08.401 +02:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2023-03-05 20:23:08.401 +02:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2023-03-05 20:23:08.402 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/swagger-ui.css - - - 200 143943 text/css 13.0396ms
+2023-03-05 20:23:08.402 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/swagger-ui-standalone-preset.js - - - 200 339486 text/javascript 12.8498ms
+2023-03-05 20:23:08.406 +02:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2023-03-05 20:23:08.406 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/swagger-ui-bundle.js - - - 200 1096145 text/javascript 16.8109ms
+2023-03-05 20:23:08.434 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7196/_vs/browserLink - -
+2023-03-05 20:23:08.461 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7196/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 26.9394ms
+2023-03-05 20:23:08.519 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7196/_framework/aspnetcore-browser-refresh.js - -
+2023-03-05 20:23:08.519 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/swagger-ui-bundle.js - -
+2023-03-05 20:23:08.519 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7196/_vs/browserLink - -
+2023-03-05 20:23:08.519 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/swagger-ui-standalone-preset.js - -
+2023-03-05 20:23:08.520 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7196/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 0.6478ms
+2023-03-05 20:23:08.521 +02:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2023-03-05 20:23:08.521 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/swagger-ui-standalone-preset.js - - - 200 339486 text/javascript 2.0534ms
+2023-03-05 20:23:08.543 +02:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2023-03-05 20:23:08.543 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/swagger-ui-bundle.js - - - 200 1096145 text/javascript 23.7180ms
+2023-03-05 20:23:08.545 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7196/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 25.5865ms
+2023-03-05 20:23:08.613 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/v1/swagger.json - -
+2023-03-05 20:23:08.644 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/favicon-32x32.png - -
+2023-03-05 20:23:08.644 +02:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2023-03-05 20:23:08.645 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/favicon-32x32.png - - - 200 628 image/png 0.4000ms
+2023-03-05 20:23:08.664 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 50.7193ms
