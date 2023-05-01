@@ -1,131 +1,64 @@
 <template>
   <v-container>
-    <v-row class="text-center">
-      <v-col cols="12">
-        <v-img
-          :src="require('../assets/logo.svg')"
-          class="my-3"
-          contain
-          height="200"
-        />
-      </v-col>
+    <v-col cols="6" offset="3">
+      <h1 class="text-center" style="font-size: 24px">KingsOfTheSea</h1>
+      <v-divider></v-divider>
+      <h2>Доброго дня! Ласкаво просимо на нашу сторінку Морського бою! Гра, в якій ви зможете показати свої навички
+        стратегії та тактики. У нашій грі є ело рейтинг, який дає змогу змагатися з іншими гравцями та рости у рейтингу
+        з кожною перемогою.
 
-      <v-col class="mb-4">
-        <h1 class="display-2 font-weight-bold mb-3">
-          Welcome to the Vuetify 3 Beta
-        </h1>
+        Гра відбувається на полі 10х10 із 10 кораблями. У вас є можливість самостійно розставити кораблі на полі, або
+        скористатися режимом рандомної розстановки. Ви зможете зіграти проти інших гравців, або проти комп'ютера.</h2>
 
-        <p class="subheading font-weight-regular">
-          For help and collaboration with other Vuetify developers,
-          <br />please join our online
-          <a href="https://community.vuetifyjs.com" target="_blank"
-            >Discord Community</a
-          >
-        </p>
-      </v-col>
+      <br>
 
-      <v-col class="mb-5" cols="12">
-        <h2 class="headline font-weight-bold mb-5">What's next?</h2>
+      <h1 class="text-center" style="font-size: 20px">
+        Форма реєстрації / входу
+      </h1>
+      <v-divider></v-divider>
+      <h2>
+        Перш ніж почати гру, вам необхідно зареєструватися або увійти у свій обліковий запис. Для цього використовуйте
+        форму реєстрації / входу на сторінці.
+      </h2>
 
-        <v-row justify="center">
-          <a
-            v-for="(next, i) in whatsNext"
-            :key="i"
-            :href="next.href"
-            class="subheading mx-3"
-            target="_blank"
-          >
-            {{ next.text }}
-          </a>
-        </v-row>
-      </v-col>
+      <br>
 
-      <v-col class="mb-5" cols="12">
-        <h2 class="headline font-weight-bold mb-5">Important Links</h2>
+      <h1 class="text-center" style="font-size: 20px">
+        Кнопки "Грати" та "Рандомна розстановка"
+      </h1>
+      <v-divider></v-divider>
+      <h2>
+        Після входу в систему користувач може обрати одну з двох кнопок: "Грати" або "Рандомна розстановка". Перша
+        кнопка дозволяє самостійно розставити кораблі на полі та почати гру з іншим гравцем або з комп'ютером. Друга
+        кнопка автоматично розставляє кораблі на полі та запускає гру з випадковим супротивником.
+      </h2>
 
-        <v-row justify="center">
-          <a
-            v-for="(link, i) in importantLinks"
-            :key="i"
-            :href="link.href"
-            class="subheading mx-3"
-            target="_blank"
-          >
-            {{ link.text }}
-          </a>
-        </v-row>
-      </v-col>
+      <br>
 
-      <v-col class="mb-5" cols="12">
-        <h2 class="headline font-weight-bold mb-5">Ecosystem</h2>
+      <h1 class="text-center" style="font-size: 20px">
+        Рейтинг
+      </h1>
+      <v-divider></v-divider>
+      <h2>
+        У нас є система ело рейтингу, яка дає можливість кожному гравцю отримати певний рейтинг після кожної гри. Цей
+        рейтинг залежить від вашого рівня гри та результатів битви. Граючи з більш досвідченими гравцями, ви зможете
+        отримувати більше очок і підвищувати свій рейтинг.
+      </h2>
 
-        <v-row justify="center">
-          <a
-            v-for="(eco, i) in ecosystem"
-            :key="i"
-            :href="eco.href"
-            class="subheading mx-3"
-            target="_blank"
-          >
-            {{ eco.text }}
-          </a>
-        </v-row>
-      </v-col>
-    </v-row>
+      <br>
+
+      <h1 class="text-center" style="font-size: 20px">
+        Правила гри
+      </h1>
+      <v-divider></v-divider>
+      <h2>
+        Гра морський бій відбувається на полі 10х10 клітинок, де кожна клітинка позначена буквою та цифрою (наприклад,
+        A1, B2, C3 і т.д.). Гравці розміщують свої кораблі на полі, затем вони по черзі стріляють по клітинках на полі
+        противника, намагаючись потопити його кораблі. Гравець, який потопив всі кораблі противника, перемагає.
+      </h2>
+    </v-col>
+
   </v-container>
+
+
 </template>
-
-<script>
-export default {
-  name: "HelloWorld",
-
-  data: () => ({
-    ecosystem: [
-      {
-        text: "vuetify-loader",
-        href: "https://github.com/vuetifyjs/vuetify-loader/tree/next",
-      },
-      {
-        text: "github",
-        href: "https://github.com/vuetifyjs/vuetify/tree/next",
-      },
-      {
-        text: "awesome-vuetify",
-        href: "https://github.com/vuetifyjs/awesome-vuetify",
-      },
-    ],
-    importantLinks: [
-      {
-        text: "Chat",
-        href: "https://community.vuetifyjs.com",
-      },
-      {
-        text: "Made with Vuetify",
-        href: "https://madewithvuejs.com/vuetify",
-      },
-      {
-        text: "Twitter",
-        href: "https://twitter.com/vuetifyjs",
-      },
-      {
-        text: "Articles",
-        href: "https://medium.com/vuetify",
-      },
-    ],
-    whatsNext: [
-      {
-        text: "Explore components",
-        href: "https://vuetifyjs.com",
-      },
-      {
-        text: "Roadmap",
-        href: "https://vuetifyjs.com/introduction/roadmap/",
-      },
-      {
-        text: "Frequently Asked Questions",
-        href: "https://vuetifyjs.com/getting-started/frequently-asked-questions",
-      },
-    ],
-  }),
-};
-</script>

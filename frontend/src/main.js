@@ -4,7 +4,9 @@ import router from "./router";
 import store from "./store";
 import vuetify from "./plugins/vuetify";
 import { loadFonts } from "./plugins/webfontloader";
+import setupInterceptors from "@/services/setupInterceptors";
 
 loadFonts();
+setupInterceptors(store);
 
 createApp(App).use(router).use(store).use(vuetify).mount("#app");

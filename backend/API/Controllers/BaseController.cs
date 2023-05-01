@@ -1,19 +1,19 @@
-﻿using MediatR;
+﻿using System.Security.Claims;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using System.Security.Claims;
 
-namespace API.Controllers
+namespace API.Controllers;
+
+[Route("api/[controller]")]
+[ApiController]
+public abstract class BaseController : ControllerBase
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public abstract class BaseController : ControllerBase
-    {
-        private IMediator _mediator;
-        protected IMediator Mediator =>
-            _mediator ??= HttpContext.RequestServices.GetService<IMediator>();
+    private IMediator _mediator;
 
-        internal string UserId => !User.Identity.IsAuthenticated
-          ? string.Empty
-          : User.FindFirst(ClaimTypes.NameIdentifier).Value;
-    }
+    protected IMediator Mediator =>
+        _mediator ??= HttpContext.RequestServices.GetService<IMediator>();
+
+    internal string UserId => !User.Identity.IsAuthenticated
+        ? string.Empty
+        : User.FindFirst(ClaimTypes.NameIdentifier).Value;
 }

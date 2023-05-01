@@ -1,0 +1,910 @@
+2023-04-26 20:51:33.866 +03:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-04-26 20:51:33.945 +03:00 [INF] Executed DbCommand (44ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-04-26 20:51:34.121 +03:00 [INF] User profile is available. Using 'C:\Users\istep\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-04-26 20:51:34.363 +03:00 [INF] Now listening on: https://localhost:7196
+2023-04-26 20:51:34.363 +03:00 [INF] Now listening on: http://localhost:5095
+2023-04-26 20:51:34.364 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-26 20:51:34.364 +03:00 [INF] Hosting environment: Development
+2023-04-26 20:51:34.364 +03:00 [INF] Content root path: C:\Users\istep\Documents\projects\KingsOfTheSea\backend\API
+2023-04-26 20:51:36.203 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger - -
+2023-04-26 20:51:36.243 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger - - - 301 0 - 41.2870ms
+2023-04-26 20:51:36.252 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/index.html - -
+2023-04-26 20:51:36.315 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/index.html - - - 200 - text/html;charset=utf-8 63.6537ms
+2023-04-26 20:51:36.325 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/swagger-ui.css - -
+2023-04-26 20:51:36.325 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/swagger-ui-bundle.js - -
+2023-04-26 20:51:36.325 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/swagger-ui-standalone-preset.js - -
+2023-04-26 20:51:36.325 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7196/_framework/aspnetcore-browser-refresh.js - -
+2023-04-26 20:51:36.329 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7196/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 3.9055ms
+2023-04-26 20:51:36.337 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2023-04-26 20:51:36.338 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/swagger-ui.css - - - 200 143943 text/css 12.9877ms
+2023-04-26 20:51:36.338 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2023-04-26 20:51:36.338 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/swagger-ui-standalone-preset.js - - - 200 339486 text/javascript 13.2227ms
+2023-04-26 20:51:36.345 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2023-04-26 20:51:36.345 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/swagger-ui-bundle.js - - - 200 1096145 text/javascript 19.6634ms
+2023-04-26 20:51:36.620 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/v1/swagger.json - -
+2023-04-26 20:51:36.649 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/favicon-32x32.png - -
+2023-04-26 20:51:36.649 +03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2023-04-26 20:51:36.649 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/favicon-32x32.png - - - 200 628 image/png 0.5834ms
+2023-04-26 20:51:36.691 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 70.9180ms
+2023-04-26 20:51:57.953 +03:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-04-26 20:51:57.997 +03:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-04-26 20:51:58.057 +03:00 [INF] User profile is available. Using 'C:\Users\istep\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-04-26 20:51:58.211 +03:00 [INF] Now listening on: https://localhost:7196
+2023-04-26 20:51:58.211 +03:00 [INF] Now listening on: http://localhost:5095
+2023-04-26 20:51:58.211 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-26 20:51:58.212 +03:00 [INF] Hosting environment: Development
+2023-04-26 20:51:58.212 +03:00 [INF] Content root path: C:\Users\istep\Documents\projects\KingsOfTheSea\backend\API
+2023-04-26 20:51:58.538 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/index.html - -
+2023-04-26 20:51:58.714 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/index.html - - - 200 - text/html;charset=utf-8 176.4422ms
+2023-04-26 20:51:58.810 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7196/_framework/aspnetcore-browser-refresh.js - -
+2023-04-26 20:51:58.810 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7196/_vs/browserLink - -
+2023-04-26 20:51:58.813 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7196/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 3.2518ms
+2023-04-26 20:51:58.860 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7196/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 49.9129ms
+2023-04-26 20:51:58.901 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/v1/swagger.json - -
+2023-04-26 20:51:58.970 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 68.9656ms
+2023-04-26 20:52:55.523 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - -
+2023-04-26 20:52:55.527 +03:00 [INF] CORS policy execution successful.
+2023-04-26 20:52:55.527 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - - - 204 - - 4.4582ms
+2023-04-26 20:53:48.578 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - -
+2023-04-26 20:53:48.579 +03:00 [INF] CORS policy execution successful.
+2023-04-26 20:53:48.579 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - - - 204 - - 1.3195ms
+2023-04-26 20:54:12.114 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - -
+2023-04-26 20:54:12.115 +03:00 [INF] CORS policy execution successful.
+2023-04-26 20:54:12.115 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - - - 204 - - 0.9822ms
+2023-04-26 21:00:01.751 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/index.html - -
+2023-04-26 21:00:01.762 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/index.html - - - 200 - text/html;charset=utf-8 11.6355ms
+2023-04-26 21:00:01.781 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7196/_framework/aspnetcore-browser-refresh.js - -
+2023-04-26 21:00:01.781 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7196/_vs/browserLink - -
+2023-04-26 21:00:01.781 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7196/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 0.6910ms
+2023-04-26 21:00:01.787 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7196/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 6.7042ms
+2023-04-26 21:00:02.133 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/v1/swagger.json - -
+2023-04-26 21:00:02.138 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 4.6613ms
+2023-04-26 21:10:33.788 +03:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-04-26 21:10:33.842 +03:00 [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-04-26 21:10:33.895 +03:00 [INF] User profile is available. Using 'C:\Users\istep\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-04-26 21:11:42.894 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-04-26 21:11:42.932 +03:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-04-26 21:11:42.979 +03:00 [INF] User profile is available. Using 'C:\Users\istep\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-04-26 21:11:43.119 +03:00 [INF] Now listening on: https://localhost:7196
+2023-04-26 21:11:43.119 +03:00 [INF] Now listening on: http://localhost:5095
+2023-04-26 21:11:43.119 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-26 21:11:43.120 +03:00 [INF] Hosting environment: Development
+2023-04-26 21:11:43.120 +03:00 [INF] Content root path: C:\Users\istep\Documents\projects\KingsOfTheSea\backend\API
+2023-04-26 21:11:43.483 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/index.html - -
+2023-04-26 21:11:43.745 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7196/_framework/aspnetcore-browser-refresh.js - -
+2023-04-26 21:11:43.745 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7196/_vs/browserLink - -
+2023-04-26 21:11:43.748 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/index.html - - - 200 - text/html;charset=utf-8 266.4225ms
+2023-04-26 21:11:43.753 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7196/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 7.5213ms
+2023-04-26 21:11:43.759 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7196/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 13.7109ms
+2023-04-26 21:11:43.808 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/swagger-ui-bundle.js - -
+2023-04-26 21:11:43.827 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2023-04-26 21:11:43.827 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/swagger-ui-bundle.js - - - 200 1096145 text/javascript 19.0913ms
+2023-04-26 21:11:43.911 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/swagger-ui-standalone-preset.js - -
+2023-04-26 21:11:43.913 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2023-04-26 21:11:43.913 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/swagger-ui-standalone-preset.js - - - 200 339486 text/javascript 2.4813ms
+2023-04-26 21:11:44.020 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/v1/swagger.json - -
+2023-04-26 21:11:44.102 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 81.6714ms
+2023-04-26 21:11:54.332 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - -
+2023-04-26 21:11:54.336 +03:00 [INF] CORS policy execution successful.
+2023-04-26 21:11:54.337 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - - - 204 - - 4.8190ms
+2023-04-26 21:11:54.341 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0
+2023-04-26 21:11:54.342 +03:00 [INF] CORS policy execution successful.
+2023-04-26 21:11:54.361 +03:00 [INF] Executing endpoint '/api/live/battleship/negotiate'
+2023-04-26 21:11:54.370 +03:00 [INF] Executed endpoint '/api/live/battleship/negotiate'
+2023-04-26 21:11:54.372 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 30.6844ms
+2023-04-26 21:11:54.374 +03:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=-5bRby4LHcDpPFd33o-8wg - -
+2023-04-26 21:11:54.375 +03:00 [INF] CORS policy execution successful.
+2023-04-26 21:11:54.376 +03:00 [INF] Executing endpoint '/api/live/battleship'
+2023-04-26 21:12:48.859 +03:00 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-04-26 21:12:48.928 +03:00 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-04-26 21:12:49.066 +03:00 [INF] User profile is available. Using 'C:\Users\istep\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-04-26 21:12:49.378 +03:00 [INF] Now listening on: https://localhost:7196
+2023-04-26 21:12:49.378 +03:00 [INF] Now listening on: http://localhost:5095
+2023-04-26 21:12:49.380 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-26 21:12:49.380 +03:00 [INF] Hosting environment: Development
+2023-04-26 21:12:49.380 +03:00 [INF] Content root path: C:\Users\istep\Documents\projects\KingsOfTheSea\backend\API
+2023-04-26 21:12:50.138 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger - -
+2023-04-26 21:12:50.186 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger - - - 301 0 - 49.9151ms
+2023-04-26 21:12:50.204 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/index.html - -
+2023-04-26 21:12:50.357 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/index.html - - - 200 - text/html;charset=utf-8 152.5158ms
+2023-04-26 21:12:50.364 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7196/_framework/aspnetcore-browser-refresh.js - -
+2023-04-26 21:12:50.381 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7196/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 16.8805ms
+2023-04-26 21:12:50.446 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7196/_vs/browserLink - -
+2023-04-26 21:12:50.478 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7196/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 32.0735ms
+2023-04-26 21:12:50.816 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/v1/swagger.json - -
+2023-04-26 21:12:50.947 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 131.2952ms
+2023-04-26 21:12:55.368 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - -
+2023-04-26 21:12:55.373 +03:00 [INF] CORS policy execution successful.
+2023-04-26 21:12:55.374 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - - - 204 - - 6.2783ms
+2023-04-26 21:12:55.379 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0
+2023-04-26 21:12:55.380 +03:00 [INF] CORS policy execution successful.
+2023-04-26 21:12:55.412 +03:00 [INF] Executing endpoint '/api/live/battleship/negotiate'
+2023-04-26 21:12:55.425 +03:00 [INF] Executed endpoint '/api/live/battleship/negotiate'
+2023-04-26 21:12:55.427 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 47.2344ms
+2023-04-26 21:12:55.429 +03:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=LIg0iI8TBF1BGMU6a_JcwA - -
+2023-04-26 21:12:55.429 +03:00 [INF] CORS policy execution successful.
+2023-04-26 21:12:55.430 +03:00 [INF] Executing endpoint '/api/live/battleship'
+2023-04-26 21:49:11.432 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-04-26 21:49:11.533 +03:00 [INF] Executed DbCommand (79ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-04-26 21:49:11.637 +03:00 [INF] User profile is available. Using 'C:\Users\istep\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-04-26 21:49:11.790 +03:00 [INF] Now listening on: https://localhost:7196
+2023-04-26 21:49:11.790 +03:00 [INF] Now listening on: http://localhost:5095
+2023-04-26 21:49:11.791 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-26 21:49:11.791 +03:00 [INF] Hosting environment: Development
+2023-04-26 21:49:11.791 +03:00 [INF] Content root path: C:\Users\istep\Documents\projects\KingsOfTheSea\backend\API
+2023-04-26 21:49:12.131 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/index.html - -
+2023-04-26 21:49:12.306 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7196/_framework/aspnetcore-browser-refresh.js - -
+2023-04-26 21:49:12.307 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/index.html - - - 200 - text/html;charset=utf-8 177.8761ms
+2023-04-26 21:49:12.313 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7196/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 6.9041ms
+2023-04-26 21:49:12.363 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7196/_vs/browserLink - -
+2023-04-26 21:49:12.377 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7196/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 13.8951ms
+2023-04-26 21:49:12.506 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/v1/swagger.json - -
+2023-04-26 21:49:12.591 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 85.6741ms
+2023-04-26 21:49:22.889 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - -
+2023-04-26 21:49:22.894 +03:00 [INF] CORS policy execution successful.
+2023-04-26 21:49:22.895 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - - - 204 - - 5.4671ms
+2023-04-26 21:49:22.899 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0
+2023-04-26 21:49:22.900 +03:00 [INF] CORS policy execution successful.
+2023-04-26 21:49:22.918 +03:00 [INF] Executing endpoint '/api/live/battleship/negotiate'
+2023-04-26 21:49:22.926 +03:00 [INF] Executed endpoint '/api/live/battleship/negotiate'
+2023-04-26 21:49:22.927 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 27.8324ms
+2023-04-26 21:49:22.930 +03:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=ObSNd_8nCugVibuXGUN8-g - -
+2023-04-26 21:49:22.930 +03:00 [INF] CORS policy execution successful.
+2023-04-26 21:49:22.931 +03:00 [INF] Executing endpoint '/api/live/battleship'
+2023-04-26 21:49:30.032 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - -
+2023-04-26 21:49:30.032 +03:00 [INF] CORS policy execution successful.
+2023-04-26 21:49:30.032 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - - - 204 - - 0.4623ms
+2023-04-26 21:49:30.035 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0
+2023-04-26 21:49:30.035 +03:00 [INF] CORS policy execution successful.
+2023-04-26 21:49:30.037 +03:00 [INF] Executing endpoint '/api/live/battleship/negotiate'
+2023-04-26 21:49:30.037 +03:00 [INF] Executed endpoint '/api/live/battleship/negotiate'
+2023-04-26 21:49:30.037 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 2.2532ms
+2023-04-26 21:49:30.040 +03:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=Nc3ty47n0dviYvgr1fMCMw - -
+2023-04-26 21:49:30.040 +03:00 [INF] CORS policy execution successful.
+2023-04-26 21:49:30.040 +03:00 [INF] Executing endpoint '/api/live/battleship'
+2023-04-26 21:49:30.047 +03:00 [ERR] Failed to invoke hub method 'FindGame'.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at API.Hubs.BattleshipsHub.FindGame(List`1 ships) in C:\Users\istep\Documents\projects\KingsOfTheSea\backend\API\Hubs\BattleShipHub.cs:line 40
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.ExecuteMethod(ObjectMethodExecutor methodExecutor, Hub hub, Object[] arguments)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.<Invoke>g__ExecuteInvocation|18_0(DefaultHubDispatcher`1 dispatcher, ObjectMethodExecutor methodExecutor, THub hub, Object[] arguments, AsyncServiceScope scope, IHubActivator`1 hubActivator, HubConnectionContext connection, HubMethodInvocationMessage hubMethodInvocationMessage, Boolean isStreamCall)
+2023-04-26 21:49:59.134 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - -
+2023-04-26 21:49:59.134 +03:00 [INF] CORS policy execution successful.
+2023-04-26 21:49:59.134 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - - - 204 - - 0.2866ms
+2023-04-26 21:49:59.136 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0
+2023-04-26 21:49:59.136 +03:00 [INF] CORS policy execution successful.
+2023-04-26 21:49:59.136 +03:00 [INF] Executing endpoint '/api/live/battleship/negotiate'
+2023-04-26 21:49:59.136 +03:00 [INF] Executed endpoint '/api/live/battleship/negotiate'
+2023-04-26 21:49:59.136 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 0.4092ms
+2023-04-26 21:49:59.142 +03:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=9TWPT3aEpnKZqG7WYvUdWQ - -
+2023-04-26 21:49:59.142 +03:00 [INF] CORS policy execution successful.
+2023-04-26 21:49:59.142 +03:00 [INF] Executing endpoint '/api/live/battleship'
+2023-04-26 21:50:07.427 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - -
+2023-04-26 21:50:07.427 +03:00 [INF] CORS policy execution successful.
+2023-04-26 21:50:07.427 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - - - 204 - - 0.3483ms
+2023-04-26 21:50:07.428 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0
+2023-04-26 21:50:07.428 +03:00 [INF] CORS policy execution successful.
+2023-04-26 21:50:07.428 +03:00 [INF] Executing endpoint '/api/live/battleship/negotiate'
+2023-04-26 21:50:07.428 +03:00 [INF] Executed endpoint '/api/live/battleship/negotiate'
+2023-04-26 21:50:07.428 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 0.4315ms
+2023-04-26 21:50:07.439 +03:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=PQFZ4wnfS8ijxS1A0-NtNw - -
+2023-04-26 21:50:07.439 +03:00 [INF] CORS policy execution successful.
+2023-04-26 21:50:07.439 +03:00 [INF] Executing endpoint '/api/live/battleship'
+2023-04-26 21:50:07.442 +03:00 [ERR] Failed to invoke hub method 'FindGame'.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at API.Hubs.BattleshipsHub.FindGame(List`1 ships) in C:\Users\istep\Documents\projects\KingsOfTheSea\backend\API\Hubs\BattleShipHub.cs:line 40
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.ExecuteMethod(ObjectMethodExecutor methodExecutor, Hub hub, Object[] arguments)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.<Invoke>g__ExecuteInvocation|18_0(DefaultHubDispatcher`1 dispatcher, ObjectMethodExecutor methodExecutor, THub hub, Object[] arguments, AsyncServiceScope scope, IHubActivator`1 hubActivator, HubConnectionContext connection, HubMethodInvocationMessage hubMethodInvocationMessage, Boolean isStreamCall)
+2023-04-26 21:50:40.124 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/index.html - -
+2023-04-26 21:50:40.128 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/index.html - - - 200 - text/html;charset=utf-8 4.5392ms
+2023-04-26 21:50:40.156 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7196/_framework/aspnetcore-browser-refresh.js - -
+2023-04-26 21:50:40.157 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7196/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 0.3406ms
+2023-04-26 21:50:40.198 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7196/_vs/browserLink - -
+2023-04-26 21:50:40.204 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7196/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 5.3737ms
+2023-04-26 21:50:40.334 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/v1/swagger.json - -
+2023-04-26 21:50:40.337 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 3.0953ms
+2023-04-26 21:50:47.342 +03:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-04-26 21:50:47.394 +03:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-04-26 21:50:47.495 +03:00 [INF] User profile is available. Using 'C:\Users\istep\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-04-26 21:50:47.779 +03:00 [INF] Now listening on: https://localhost:7196
+2023-04-26 21:50:47.779 +03:00 [INF] Now listening on: http://localhost:5095
+2023-04-26 21:50:47.779 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-26 21:50:47.780 +03:00 [INF] Hosting environment: Development
+2023-04-26 21:50:47.780 +03:00 [INF] Content root path: C:\Users\istep\Documents\projects\KingsOfTheSea\backend\API
+2023-04-26 21:50:48.231 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/index.html - -
+2023-04-26 21:50:48.397 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/index.html - - - 200 - text/html;charset=utf-8 165.8188ms
+2023-04-26 21:50:48.397 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7196/_framework/aspnetcore-browser-refresh.js - -
+2023-04-26 21:50:48.404 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7196/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 6.9424ms
+2023-04-26 21:50:48.464 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7196/_vs/browserLink - -
+2023-04-26 21:50:48.500 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7196/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 35.7684ms
+2023-04-26 21:50:48.633 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/v1/swagger.json - -
+2023-04-26 21:50:48.731 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 98.5613ms
+2023-04-26 21:51:05.993 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - -
+2023-04-26 21:51:05.998 +03:00 [INF] CORS policy execution successful.
+2023-04-26 21:51:06.000 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - - - 204 - - 7.1978ms
+2023-04-26 21:51:06.006 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0
+2023-04-26 21:51:06.007 +03:00 [INF] CORS policy execution successful.
+2023-04-26 21:51:06.040 +03:00 [INF] Executing endpoint '/api/live/battleship/negotiate'
+2023-04-26 21:51:06.055 +03:00 [INF] Executed endpoint '/api/live/battleship/negotiate'
+2023-04-26 21:51:06.056 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 50.1465ms
+2023-04-26 21:51:06.059 +03:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=zBtUsAKA9IKcD_0pHuew-g - -
+2023-04-26 21:51:06.059 +03:00 [INF] CORS policy execution successful.
+2023-04-26 21:51:06.060 +03:00 [INF] Executing endpoint '/api/live/battleship'
+2023-04-26 21:51:14.949 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - -
+2023-04-26 21:51:14.949 +03:00 [INF] CORS policy execution successful.
+2023-04-26 21:51:14.949 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - - - 204 - - 0.4672ms
+2023-04-26 21:51:14.953 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0
+2023-04-26 21:51:14.953 +03:00 [INF] CORS policy execution successful.
+2023-04-26 21:51:14.954 +03:00 [INF] Executing endpoint '/api/live/battleship/negotiate'
+2023-04-26 21:51:14.955 +03:00 [INF] Executed endpoint '/api/live/battleship/negotiate'
+2023-04-26 21:51:14.955 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 2.1949ms
+2023-04-26 21:51:14.958 +03:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=lWqPnZs6k0rcT-ZAZ7JnGA - -
+2023-04-26 21:51:14.958 +03:00 [INF] CORS policy execution successful.
+2023-04-26 21:51:14.958 +03:00 [INF] Executing endpoint '/api/live/battleship'
+2023-04-26 21:59:02.355 +03:00 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-04-26 21:59:02.425 +03:00 [INF] Executed DbCommand (37ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-04-26 21:59:02.538 +03:00 [INF] User profile is available. Using 'C:\Users\istep\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-04-26 21:59:02.804 +03:00 [INF] Now listening on: https://localhost:7196
+2023-04-26 21:59:02.805 +03:00 [INF] Now listening on: http://localhost:5095
+2023-04-26 21:59:02.806 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-26 21:59:02.806 +03:00 [INF] Hosting environment: Development
+2023-04-26 21:59:02.806 +03:00 [INF] Content root path: C:\Users\istep\Documents\projects\KingsOfTheSea\backend\API
+2023-04-26 21:59:03.388 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/index.html - -
+2023-04-26 21:59:03.585 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/index.html - - - 200 - text/html;charset=utf-8 195.0469ms
+2023-04-26 21:59:03.586 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7196/_framework/aspnetcore-browser-refresh.js - -
+2023-04-26 21:59:03.594 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7196/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 8.2155ms
+2023-04-26 21:59:03.646 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7196/_vs/browserLink - -
+2023-04-26 21:59:03.679 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7196/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 32.6812ms
+2023-04-26 21:59:03.815 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/v1/swagger.json - -
+2023-04-26 21:59:03.923 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 107.3989ms
+2023-04-26 21:59:10.486 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - -
+2023-04-26 21:59:10.492 +03:00 [INF] CORS policy execution successful.
+2023-04-26 21:59:10.494 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - - - 204 - - 7.5600ms
+2023-04-26 21:59:10.498 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0
+2023-04-26 21:59:10.499 +03:00 [INF] CORS policy execution successful.
+2023-04-26 21:59:10.527 +03:00 [INF] Executing endpoint '/api/live/battleship/negotiate'
+2023-04-26 21:59:10.539 +03:00 [INF] Executed endpoint '/api/live/battleship/negotiate'
+2023-04-26 21:59:10.540 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 42.5782ms
+2023-04-26 21:59:10.543 +03:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=DujcjH3O7rj3mH3lffssCQ - -
+2023-04-26 21:59:10.544 +03:00 [INF] CORS policy execution successful.
+2023-04-26 21:59:10.545 +03:00 [INF] Executing endpoint '/api/live/battleship'
+2023-04-26 21:59:13.050 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - -
+2023-04-26 21:59:13.051 +03:00 [INF] CORS policy execution successful.
+2023-04-26 21:59:13.051 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - - - 204 - - 0.6170ms
+2023-04-26 21:59:13.056 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0
+2023-04-26 21:59:13.056 +03:00 [INF] CORS policy execution successful.
+2023-04-26 21:59:13.057 +03:00 [INF] Executing endpoint '/api/live/battleship/negotiate'
+2023-04-26 21:59:13.057 +03:00 [INF] Executed endpoint '/api/live/battleship/negotiate'
+2023-04-26 21:59:13.058 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 2.0596ms
+2023-04-26 21:59:13.062 +03:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=8bR4iyHbXJq0UmIwbZ3XIw - -
+2023-04-26 21:59:13.062 +03:00 [INF] CORS policy execution successful.
+2023-04-26 21:59:13.062 +03:00 [INF] Executing endpoint '/api/live/battleship'
+2023-04-26 21:59:59.397 +03:00 [INF] Executed endpoint '/api/live/battleship'
+2023-04-26 21:59:59.399 +03:00 [INF] Request finished HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=8bR4iyHbXJq0UmIwbZ3XIw - - - 200 - - 46336.9923ms
+2023-04-26 22:00:12.174 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - -
+2023-04-26 22:00:12.175 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:00:12.175 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - - - 204 - - 0.3085ms
+2023-04-26 22:00:12.177 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0
+2023-04-26 22:00:12.177 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:00:12.177 +03:00 [INF] Executing endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:00:12.177 +03:00 [INF] Executed endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:00:12.178 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 0.5443ms
+2023-04-26 22:00:12.256 +03:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=uJk6-sOqZOkQH70y-8fqTA - -
+2023-04-26 22:00:12.257 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:00:12.257 +03:00 [INF] Executing endpoint '/api/live/battleship'
+2023-04-26 22:01:23.973 +03:00 [INF] Executed endpoint '/api/live/battleship'
+2023-04-26 22:01:23.973 +03:00 [INF] Request finished HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=DujcjH3O7rj3mH3lffssCQ - - - 200 - - 133430.4390ms
+2023-04-26 22:01:45.695 +03:00 [INF] Executed endpoint '/api/live/battleship'
+2023-04-26 22:01:45.695 +03:00 [INF] Request finished HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=uJk6-sOqZOkQH70y-8fqTA - - - 200 - - 93438.2923ms
+2023-04-26 22:01:47.070 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - -
+2023-04-26 22:01:47.071 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:01:47.071 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - - - 204 - - 0.2905ms
+2023-04-26 22:01:47.072 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0
+2023-04-26 22:01:47.072 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:01:47.072 +03:00 [INF] Executing endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:01:47.072 +03:00 [INF] Executed endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:01:47.072 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 0.4197ms
+2023-04-26 22:01:47.082 +03:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=7bUkGjFfa-z8qGuQMLKzmA - -
+2023-04-26 22:01:47.082 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:01:47.082 +03:00 [INF] Executing endpoint '/api/live/battleship'
+2023-04-26 22:01:48.762 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - -
+2023-04-26 22:01:48.762 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:01:48.762 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - - - 204 - - 0.2488ms
+2023-04-26 22:01:48.763 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0
+2023-04-26 22:01:48.764 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:01:48.764 +03:00 [INF] Executing endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:01:48.764 +03:00 [INF] Executed endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:01:48.764 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 0.3498ms
+2023-04-26 22:01:48.774 +03:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=m3TNvpIfVgJJFgpRwJWPaw - -
+2023-04-26 22:01:48.774 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:01:48.774 +03:00 [INF] Executing endpoint '/api/live/battleship'
+2023-04-26 22:04:18.771 +03:00 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-04-26 22:04:18.844 +03:00 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-04-26 22:04:18.989 +03:00 [INF] User profile is available. Using 'C:\Users\istep\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-04-26 22:04:19.268 +03:00 [INF] Now listening on: https://localhost:7196
+2023-04-26 22:04:19.268 +03:00 [INF] Now listening on: http://localhost:5095
+2023-04-26 22:04:19.269 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-26 22:04:19.269 +03:00 [INF] Hosting environment: Development
+2023-04-26 22:04:19.269 +03:00 [INF] Content root path: C:\Users\istep\Documents\projects\KingsOfTheSea\backend\API
+2023-04-26 22:04:19.692 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/index.html - -
+2023-04-26 22:04:19.903 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/index.html - - - 200 - text/html;charset=utf-8 212.1316ms
+2023-04-26 22:04:19.909 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7196/_framework/aspnetcore-browser-refresh.js - -
+2023-04-26 22:04:19.918 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7196/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 8.5058ms
+2023-04-26 22:04:19.969 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7196/_vs/browserLink - -
+2023-04-26 22:04:19.996 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7196/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 26.8687ms
+2023-04-26 22:04:20.139 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/v1/swagger.json - -
+2023-04-26 22:04:20.235 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 95.4516ms
+2023-04-26 22:04:26.956 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - -
+2023-04-26 22:04:26.961 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:04:26.962 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - - - 204 - - 6.8727ms
+2023-04-26 22:04:26.968 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0
+2023-04-26 22:04:26.970 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:04:26.998 +03:00 [INF] Executing endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:04:27.011 +03:00 [INF] Executed endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:04:27.012 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 44.0788ms
+2023-04-26 22:04:27.015 +03:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=TCxqoAnMFImmU8sHeQUeTQ - -
+2023-04-26 22:04:27.016 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:04:27.017 +03:00 [INF] Executing endpoint '/api/live/battleship'
+2023-04-26 22:04:29.805 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - -
+2023-04-26 22:04:29.805 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:04:29.806 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - - - 204 - - 0.3631ms
+2023-04-26 22:04:29.809 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0
+2023-04-26 22:04:29.809 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:04:29.811 +03:00 [INF] Executing endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:04:29.811 +03:00 [INF] Executed endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:04:29.811 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 2.2967ms
+2023-04-26 22:04:29.813 +03:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=L0aqkwMkVcwg0e006Hbp1A - -
+2023-04-26 22:04:29.813 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:04:29.813 +03:00 [INF] Executing endpoint '/api/live/battleship'
+2023-04-26 22:05:05.210 +03:00 [INF] Executed endpoint '/api/live/battleship'
+2023-04-26 22:05:05.211 +03:00 [INF] Request finished HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=TCxqoAnMFImmU8sHeQUeTQ - - - 200 - - 38195.8453ms
+2023-04-26 22:06:04.974 +03:00 [INF] Executed endpoint '/api/live/battleship'
+2023-04-26 22:06:04.974 +03:00 [INF] Request finished HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=L0aqkwMkVcwg0e006Hbp1A - - - 200 - - 95161.0333ms
+2023-04-26 22:06:07.087 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - -
+2023-04-26 22:06:07.087 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:06:07.088 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - - - 204 - - 0.2828ms
+2023-04-26 22:06:07.088 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0
+2023-04-26 22:06:07.088 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:06:07.089 +03:00 [INF] Executing endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:06:07.089 +03:00 [INF] Executed endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:06:07.089 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 0.4564ms
+2023-04-26 22:06:07.097 +03:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=gWLoFhzY56RHATvdLG_M-Q - -
+2023-04-26 22:06:07.097 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:06:07.097 +03:00 [INF] Executing endpoint '/api/live/battleship'
+2023-04-26 22:06:11.117 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - -
+2023-04-26 22:06:11.117 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:06:11.117 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - - - 204 - - 0.3236ms
+2023-04-26 22:06:11.119 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0
+2023-04-26 22:06:11.119 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:06:11.119 +03:00 [INF] Executing endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:06:11.120 +03:00 [INF] Executed endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:06:11.120 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 0.4041ms
+2023-04-26 22:06:11.199 +03:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=mhuFjw_L2voLE9dKfTOUVQ - -
+2023-04-26 22:06:11.199 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:06:11.200 +03:00 [INF] Executing endpoint '/api/live/battleship'
+2023-04-26 22:07:55.676 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - -
+2023-04-26 22:07:55.676 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:07:55.676 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - - - 204 - - 0.2654ms
+2023-04-26 22:07:55.677 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0
+2023-04-26 22:07:55.677 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:07:55.677 +03:00 [INF] Executing endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:07:55.677 +03:00 [INF] Executed endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:07:55.677 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 0.3967ms
+2023-04-26 22:07:55.684 +03:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=KwXzmmxHilKn9h80iTcCKQ - -
+2023-04-26 22:07:55.684 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:07:55.684 +03:00 [INF] Executing endpoint '/api/live/battleship'
+2023-04-26 22:08:07.017 +03:00 [INF] Executed endpoint '/api/live/battleship'
+2023-04-26 22:08:07.017 +03:00 [INF] Request finished HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=gWLoFhzY56RHATvdLG_M-Q - - - 200 - - 119920.2743ms
+2023-04-26 22:08:07.018 +03:00 [INF] Executed endpoint '/api/live/battleship'
+2023-04-26 22:08:07.018 +03:00 [INF] Request finished HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=KwXzmmxHilKn9h80iTcCKQ - - - 200 - - 11334.6311ms
+2023-04-26 22:08:24.738 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - -
+2023-04-26 22:08:24.738 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:08:24.738 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - - - 204 - - 0.2775ms
+2023-04-26 22:08:24.739 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0
+2023-04-26 22:08:24.739 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:08:24.739 +03:00 [INF] Executing endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:08:24.739 +03:00 [INF] Executed endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:08:24.739 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 0.5217ms
+2023-04-26 22:08:24.747 +03:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=UYAsl6aCtJdnpGba-6n51A - -
+2023-04-26 22:08:24.747 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:08:24.747 +03:00 [INF] Executing endpoint '/api/live/battleship'
+2023-04-26 22:08:31.753 +03:00 [INF] Executed endpoint '/api/live/battleship'
+2023-04-26 22:08:31.753 +03:00 [INF] Request finished HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=UYAsl6aCtJdnpGba-6n51A - - - 200 - - 7006.7894ms
+2023-04-26 22:08:33.813 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - -
+2023-04-26 22:08:33.813 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:08:33.814 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - - - 204 - - 0.3891ms
+2023-04-26 22:08:33.814 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0
+2023-04-26 22:08:33.814 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:08:33.814 +03:00 [INF] Executing endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:08:33.815 +03:00 [INF] Executed endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:08:33.815 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 0.3699ms
+2023-04-26 22:08:33.823 +03:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=lTZxIN19Afjm8wKCvIyTGw - -
+2023-04-26 22:08:33.823 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:08:33.823 +03:00 [INF] Executing endpoint '/api/live/battleship'
+2023-04-26 22:08:43.171 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - -
+2023-04-26 22:08:43.171 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:08:43.171 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - - - 204 - - 0.2119ms
+2023-04-26 22:08:43.173 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0
+2023-04-26 22:08:43.173 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:08:43.173 +03:00 [INF] Executing endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:08:43.173 +03:00 [INF] Executed endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:08:43.173 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 0.4390ms
+2023-04-26 22:08:43.179 +03:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=eZnR50zNYmt9drKY1213YQ - -
+2023-04-26 22:08:43.179 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:08:43.179 +03:00 [INF] Executing endpoint '/api/live/battleship'
+2023-04-26 22:09:45.106 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - -
+2023-04-26 22:09:45.107 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:09:45.107 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - - - 204 - - 0.4628ms
+2023-04-26 22:09:45.108 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0
+2023-04-26 22:09:45.108 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:09:45.108 +03:00 [INF] Executing endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:09:45.108 +03:00 [INF] Executed endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:09:45.108 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 0.3539ms
+2023-04-26 22:09:45.116 +03:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=QHAMEzSmBb5L9zrYVGDsZw - -
+2023-04-26 22:09:45.116 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:09:45.116 +03:00 [INF] Executing endpoint '/api/live/battleship'
+2023-04-26 22:09:49.064 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - -
+2023-04-26 22:09:49.064 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:09:49.064 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - - - 204 - - 0.2622ms
+2023-04-26 22:09:49.066 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0
+2023-04-26 22:09:49.066 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:09:49.066 +03:00 [INF] Executing endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:09:49.066 +03:00 [INF] Executed endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:09:49.066 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 0.5685ms
+2023-04-26 22:09:49.073 +03:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=EsZoaEq54ZAQMStdiq878w - -
+2023-04-26 22:09:49.073 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:09:49.073 +03:00 [INF] Executing endpoint '/api/live/battleship'
+2023-04-26 22:10:08.834 +03:00 [INF] Executed endpoint '/api/live/battleship'
+2023-04-26 22:10:08.835 +03:00 [INF] Request finished HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=eZnR50zNYmt9drKY1213YQ - - - 200 - - 85655.5818ms
+2023-04-26 22:10:08.835 +03:00 [INF] Executed endpoint '/api/live/battleship'
+2023-04-26 22:10:08.835 +03:00 [INF] Request finished HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=mhuFjw_L2voLE9dKfTOUVQ - - - 200 - - 237635.6992ms
+2023-04-26 22:10:28.215 +03:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-04-26 22:10:28.252 +03:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-04-26 22:10:28.297 +03:00 [INF] User profile is available. Using 'C:\Users\istep\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-04-26 22:10:28.434 +03:00 [INF] Now listening on: https://localhost:7196
+2023-04-26 22:10:28.434 +03:00 [INF] Now listening on: http://localhost:5095
+2023-04-26 22:10:28.435 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-26 22:10:28.435 +03:00 [INF] Hosting environment: Development
+2023-04-26 22:10:28.435 +03:00 [INF] Content root path: C:\Users\istep\Documents\projects\KingsOfTheSea\backend\API
+2023-04-26 22:10:29.062 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/index.html - -
+2023-04-26 22:10:29.191 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/index.html - - - 200 - text/html;charset=utf-8 130.7371ms
+2023-04-26 22:10:29.270 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7196/_framework/aspnetcore-browser-refresh.js - -
+2023-04-26 22:10:29.270 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7196/_vs/browserLink - -
+2023-04-26 22:10:29.273 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7196/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 3.1096ms
+2023-04-26 22:10:29.280 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7196/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 10.1394ms
+2023-04-26 22:10:29.386 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/v1/swagger.json - -
+2023-04-26 22:10:29.552 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 166.7428ms
+2023-04-26 22:11:35.583 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - -
+2023-04-26 22:11:35.587 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:11:35.588 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - - - 204 - - 5.5472ms
+2023-04-26 22:11:35.592 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0
+2023-04-26 22:11:35.593 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:11:35.610 +03:00 [INF] Executing endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:11:35.617 +03:00 [INF] Executed endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:11:35.619 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 26.9470ms
+2023-04-26 22:11:35.621 +03:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=zLoU26AMydI2Lk32EV4Vsw - -
+2023-04-26 22:11:35.622 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:11:35.623 +03:00 [INF] Executing endpoint '/api/live/battleship'
+2023-04-26 22:11:57.400 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - -
+2023-04-26 22:11:57.400 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:11:57.401 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - - - 204 - - 0.3351ms
+2023-04-26 22:11:57.405 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0
+2023-04-26 22:11:57.405 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:11:57.407 +03:00 [INF] Executing endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:11:57.407 +03:00 [INF] Executed endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:11:57.407 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 2.2030ms
+2023-04-26 22:11:57.501 +03:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=tUvNjT-T92DksmG4usDJWg - -
+2023-04-26 22:11:57.501 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:11:57.501 +03:00 [INF] Executing endpoint '/api/live/battleship'
+2023-04-26 22:12:21.850 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - -
+2023-04-26 22:12:21.851 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:12:21.851 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - - - 204 - - 0.2979ms
+2023-04-26 22:12:21.851 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0
+2023-04-26 22:12:21.851 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:12:21.852 +03:00 [INF] Executing endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:12:21.852 +03:00 [INF] Executed endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:12:21.852 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 0.3918ms
+2023-04-26 22:12:21.861 +03:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=AtudMmNEFJTQsR2qsIklcw - -
+2023-04-26 22:12:21.861 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:12:21.861 +03:00 [INF] Executing endpoint '/api/live/battleship'
+2023-04-26 22:12:28.205 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - -
+2023-04-26 22:12:28.206 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:12:28.206 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - - - 204 - - 0.2638ms
+2023-04-26 22:12:28.207 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0
+2023-04-26 22:12:28.207 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:12:28.207 +03:00 [INF] Executing endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:12:28.207 +03:00 [INF] Executed endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:12:28.208 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 0.3577ms
+2023-04-26 22:12:28.213 +03:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=cdMePAXhuN_0RMKFSD7vlw - -
+2023-04-26 22:12:28.213 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:12:28.213 +03:00 [INF] Executing endpoint '/api/live/battleship'
+2023-04-26 22:13:06.425 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - -
+2023-04-26 22:13:06.425 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:13:06.425 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - - - 204 - - 0.2408ms
+2023-04-26 22:13:06.426 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0
+2023-04-26 22:13:06.427 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:13:06.427 +03:00 [INF] Executing endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:13:06.427 +03:00 [INF] Executed endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:13:06.427 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 1.0836ms
+2023-04-26 22:13:06.435 +03:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=WZXOFhli5WvJz28_59h-xw - -
+2023-04-26 22:13:06.435 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:13:06.435 +03:00 [INF] Executing endpoint '/api/live/battleship'
+2023-04-26 22:13:10.895 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - -
+2023-04-26 22:13:10.895 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:13:10.895 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - - - 204 - - 0.2755ms
+2023-04-26 22:13:10.897 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0
+2023-04-26 22:13:10.897 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:13:10.897 +03:00 [INF] Executing endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:13:10.897 +03:00 [INF] Executed endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:13:10.897 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 0.4030ms
+2023-04-26 22:13:10.903 +03:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=NWq0NQamCZl4tu9-wr9FoQ - -
+2023-04-26 22:13:10.903 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:13:10.903 +03:00 [INF] Executing endpoint '/api/live/battleship'
+2023-04-26 22:14:09.488 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - -
+2023-04-26 22:14:09.488 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:14:09.489 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - - - 204 - - 0.4536ms
+2023-04-26 22:14:09.489 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0
+2023-04-26 22:14:09.489 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:14:09.489 +03:00 [INF] Executing endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:14:09.490 +03:00 [INF] Executed endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:14:09.491 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 1.2749ms
+2023-04-26 22:14:09.497 +03:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=86Ltp1Sgg_bwqDMr28qZ5g - -
+2023-04-26 22:14:09.497 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:14:09.497 +03:00 [INF] Executing endpoint '/api/live/battleship'
+2023-04-26 22:14:15.226 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - -
+2023-04-26 22:14:15.226 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:14:15.226 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - - - 204 - - 0.2706ms
+2023-04-26 22:14:15.228 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0
+2023-04-26 22:14:15.228 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:14:15.228 +03:00 [INF] Executing endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:14:15.228 +03:00 [INF] Executed endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:14:15.228 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 0.4865ms
+2023-04-26 22:14:15.235 +03:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=wRunu_xjKLzxJ5CYMwDU_Q - -
+2023-04-26 22:14:15.235 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:14:15.235 +03:00 [INF] Executing endpoint '/api/live/battleship'
+2023-04-26 22:15:03.083 +03:00 [INF] Executed endpoint '/api/live/battleship'
+2023-04-26 22:15:03.083 +03:00 [INF] Executed endpoint '/api/live/battleship'
+2023-04-26 22:15:03.083 +03:00 [INF] Executed endpoint '/api/live/battleship'
+2023-04-26 22:15:03.083 +03:00 [INF] Executed endpoint '/api/live/battleship'
+2023-04-26 22:15:03.085 +03:00 [INF] Request finished HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=tUvNjT-T92DksmG4usDJWg - - - 200 - - 185584.0231ms
+2023-04-26 22:15:03.085 +03:00 [INF] Request finished HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=wRunu_xjKLzxJ5CYMwDU_Q - - - 200 - - 47849.7049ms
+2023-04-26 22:15:03.085 +03:00 [INF] Request finished HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=NWq0NQamCZl4tu9-wr9FoQ - - - 200 - - 112181.7226ms
+2023-04-26 22:15:03.085 +03:00 [INF] Request finished HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=cdMePAXhuN_0RMKFSD7vlw - - - 200 - - 154871.7690ms
+2023-04-26 22:15:29.269 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - -
+2023-04-26 22:15:29.269 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:15:29.269 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - - - 204 - - 0.2182ms
+2023-04-26 22:15:29.271 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0
+2023-04-26 22:15:29.271 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:15:29.271 +03:00 [INF] Executing endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:15:29.271 +03:00 [INF] Executed endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:15:29.271 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 0.3785ms
+2023-04-26 22:15:29.279 +03:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=SPlCpiiGKQ59ceDVsnlcSw - -
+2023-04-26 22:15:29.279 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:15:29.280 +03:00 [INF] Executing endpoint '/api/live/battleship'
+2023-04-26 22:15:31.309 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - -
+2023-04-26 22:15:31.309 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:15:31.309 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - - - 204 - - 0.2292ms
+2023-04-26 22:15:31.310 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0
+2023-04-26 22:15:31.310 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:15:31.310 +03:00 [INF] Executing endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:15:31.310 +03:00 [INF] Executed endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:15:31.311 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 0.4627ms
+2023-04-26 22:15:31.317 +03:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=y2UPEaqRaK3GkH5OcdD_pg - -
+2023-04-26 22:15:31.318 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:15:31.318 +03:00 [INF] Executing endpoint '/api/live/battleship'
+2023-04-26 22:17:43.142 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - -
+2023-04-26 22:17:43.142 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:17:43.142 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - - - 204 - - 0.2291ms
+2023-04-26 22:17:43.143 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0
+2023-04-26 22:17:43.143 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:17:43.143 +03:00 [INF] Executing endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:17:43.143 +03:00 [INF] Executed endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:17:43.143 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 0.2931ms
+2023-04-26 22:17:43.149 +03:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=sfzqAeScdljPpqEgpUB3og - -
+2023-04-26 22:17:43.149 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:17:43.149 +03:00 [INF] Executing endpoint '/api/live/battleship'
+2023-04-26 22:17:45.876 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - -
+2023-04-26 22:17:45.876 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:17:45.876 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - - - 204 - - 0.2343ms
+2023-04-26 22:17:45.878 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0
+2023-04-26 22:17:45.878 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:17:45.878 +03:00 [INF] Executing endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:17:45.878 +03:00 [INF] Executed endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:17:45.878 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 0.3781ms
+2023-04-26 22:17:45.962 +03:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=GwH1gAv9m56BB1tAvaXjcg - -
+2023-04-26 22:17:45.962 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:17:45.962 +03:00 [INF] Executing endpoint '/api/live/battleship'
+2023-04-26 22:18:36.446 +03:00 [INF] Executed endpoint '/api/live/battleship'
+2023-04-26 22:18:36.446 +03:00 [INF] Executed endpoint '/api/live/battleship'
+2023-04-26 22:18:36.446 +03:00 [INF] Executed endpoint '/api/live/battleship'
+2023-04-26 22:18:36.446 +03:00 [INF] Executed endpoint '/api/live/battleship'
+2023-04-26 22:18:36.446 +03:00 [INF] Executed endpoint '/api/live/battleship'
+2023-04-26 22:18:36.447 +03:00 [INF] Request finished HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=zLoU26AMydI2Lk32EV4Vsw - - - 200 - - 420825.9206ms
+2023-04-26 22:18:36.447 +03:00 [INF] Request finished HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=86Ltp1Sgg_bwqDMr28qZ5g - - - 200 - - 266949.6990ms
+2023-04-26 22:18:36.447 +03:00 [INF] Request finished HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=AtudMmNEFJTQsR2qsIklcw - - - 200 - - 374586.1171ms
+2023-04-26 22:18:36.447 +03:00 [INF] Request finished HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=y2UPEaqRaK3GkH5OcdD_pg - - - 200 - - 185129.2485ms
+2023-04-26 22:18:36.447 +03:00 [INF] Request finished HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=WZXOFhli5WvJz28_59h-xw - - - 200 - - 330011.8146ms
+2023-04-26 22:18:36.447 +03:00 [ERR] Error when dispatching 'OnDisconnectedAsync' on hub.
+System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
+   at System.Collections.Generic.List`1.RemoveAt(Int32 index)
+   at System.Collections.Generic.List`1.Remove(T item)
+   at API.Hubs.BattleshipsHub.OnDisconnectedAsync(Exception exception) in C:\Users\istep\Documents\projects\KingsOfTheSea\backend\API\Hubs\BattleShipHub.cs:line 137
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.HubOnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+2023-04-26 22:18:36.463 +03:00 [ERR] Failed disposing connection 7SgRhHwpz_FfPQOxarXVbQ.
+System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
+   at System.Collections.Generic.List`1.RemoveAt(Int32 index)
+   at System.Collections.Generic.List`1.Remove(T item)
+   at API.Hubs.BattleshipsHub.OnDisconnectedAsync(Exception exception) in C:\Users\istep\Documents\projects\KingsOfTheSea\backend\API\Hubs\BattleShipHub.cs:line 137
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher`1.OnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.HubOnDisconnectedAsync(HubConnectionContext connection, Exception exception)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.RunHubAsync(HubConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.OnConnectedAsync(ConnectionContext connection)
+   at Microsoft.AspNetCore.SignalR.HubConnectionHandler`1.OnConnectedAsync(ConnectionContext connection)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.ExecuteApplication(ConnectionDelegate connectionDelegate)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.WaitOnTasks(Task applicationTask, Task transportTask, Boolean closeGracefully)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionContext.DisposeAsync(Boolean closeGracefully)
+   at Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionManager.DisposeAndRemoveAsync(HttpConnectionContext connection, Boolean closeGracefully)
+2023-04-26 22:18:36.464 +03:00 [INF] Executed endpoint '/api/live/battleship'
+2023-04-26 22:18:36.464 +03:00 [INF] Request finished HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=sfzqAeScdljPpqEgpUB3og - - - 200 - - 53315.4454ms
+2023-04-26 22:24:04.022 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - -
+2023-04-26 22:24:04.022 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:24:04.022 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - - - 204 - - 0.1989ms
+2023-04-26 22:24:04.024 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0
+2023-04-26 22:24:04.024 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:24:04.024 +03:00 [INF] Executing endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:24:04.025 +03:00 [INF] Executed endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:24:04.025 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 0.3895ms
+2023-04-26 22:24:04.069 +03:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=OfxJ1pa3zUOsEoosOrkheg - -
+2023-04-26 22:24:04.069 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:24:04.069 +03:00 [INF] Executing endpoint '/api/live/battleship'
+2023-04-26 22:24:10.864 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - -
+2023-04-26 22:24:10.864 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:24:10.864 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - - - 204 - - 0.1640ms
+2023-04-26 22:24:10.866 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0
+2023-04-26 22:24:10.866 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:24:10.866 +03:00 [INF] Executing endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:24:10.866 +03:00 [INF] Executed endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:24:10.866 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 0.2969ms
+2023-04-26 22:24:10.952 +03:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=MUod85McN8Kmpx2O-qGI5g - -
+2023-04-26 22:24:10.952 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:24:10.952 +03:00 [INF] Executing endpoint '/api/live/battleship'
+2023-04-26 22:31:07.086 +03:00 [INF] Executed endpoint '/api/live/battleship'
+2023-04-26 22:31:07.086 +03:00 [INF] Request finished HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=OfxJ1pa3zUOsEoosOrkheg - - - 200 - - 423016.6795ms
+2023-04-26 22:31:14.208 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - -
+2023-04-26 22:31:14.208 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:31:14.209 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - - - 204 - - 0.2478ms
+2023-04-26 22:31:14.209 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0
+2023-04-26 22:31:14.209 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:31:14.209 +03:00 [INF] Executing endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:31:14.210 +03:00 [INF] Executed endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:31:14.210 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 0.2968ms
+2023-04-26 22:31:14.220 +03:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=VMu_GGzKowlgwFBhcDQikQ - -
+2023-04-26 22:31:14.220 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:31:14.220 +03:00 [INF] Executing endpoint '/api/live/battleship'
+2023-04-26 22:31:21.250 +03:00 [INF] Executed endpoint '/api/live/battleship'
+2023-04-26 22:31:21.250 +03:00 [INF] Request finished HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=MUod85McN8Kmpx2O-qGI5g - - - 200 - - 430298.4753ms
+2023-04-26 22:31:23.918 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - -
+2023-04-26 22:31:23.918 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:31:23.918 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - - - 204 - - 0.3379ms
+2023-04-26 22:31:23.920 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0
+2023-04-26 22:31:23.920 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:31:23.920 +03:00 [INF] Executing endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:31:23.920 +03:00 [INF] Executed endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:31:23.920 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 0.3035ms
+2023-04-26 22:31:23.998 +03:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=nuWMebxvAIbOFtLcBlvd3g - -
+2023-04-26 22:31:23.998 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:31:23.999 +03:00 [INF] Executing endpoint '/api/live/battleship'
+2023-04-26 22:31:40.433 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - -
+2023-04-26 22:31:40.433 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:31:40.433 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - - - 204 - - 0.1876ms
+2023-04-26 22:31:40.435 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0
+2023-04-26 22:31:40.435 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:31:40.435 +03:00 [INF] Executing endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:31:40.435 +03:00 [INF] Executed endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:31:40.436 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 0.4560ms
+2023-04-26 22:31:40.443 +03:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=kl_2vtqOCqO_qRIMonrmHw - -
+2023-04-26 22:31:40.443 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:31:40.443 +03:00 [INF] Executing endpoint '/api/live/battleship'
+2023-04-26 22:31:42.508 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - -
+2023-04-26 22:31:42.508 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:31:42.508 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - - - 204 - - 0.1674ms
+2023-04-26 22:31:42.510 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0
+2023-04-26 22:31:42.510 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:31:42.510 +03:00 [INF] Executing endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:31:42.510 +03:00 [INF] Executed endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:31:42.510 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 0.2473ms
+2023-04-26 22:31:42.520 +03:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=yDbBKuf0sWOZd8V7c8CeRg - -
+2023-04-26 22:31:42.520 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:31:42.520 +03:00 [INF] Executing endpoint '/api/live/battleship'
+2023-04-26 22:40:24.447 +03:00 [INF] Executed endpoint '/api/live/battleship'
+2023-04-26 22:40:24.447 +03:00 [INF] Request finished HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=yDbBKuf0sWOZd8V7c8CeRg - - - 200 - - 521927.6512ms
+2023-04-26 22:40:26.581 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - -
+2023-04-26 22:40:26.582 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:40:26.582 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - - - 204 - - 0.1897ms
+2023-04-26 22:40:26.583 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0
+2023-04-26 22:40:26.583 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:40:26.583 +03:00 [INF] Executing endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:40:26.583 +03:00 [INF] Executed endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:40:26.584 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 0.3737ms
+2023-04-26 22:40:26.663 +03:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=LngZvgtNxfHWAJTxOn0alw - -
+2023-04-26 22:40:26.663 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:40:26.663 +03:00 [INF] Executing endpoint '/api/live/battleship'
+2023-04-26 22:41:49.696 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - -
+2023-04-26 22:41:49.696 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:41:49.696 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - - - 204 - - 0.1757ms
+2023-04-26 22:41:49.698 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0
+2023-04-26 22:41:49.698 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:41:49.698 +03:00 [INF] Executing endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:41:49.698 +03:00 [INF] Executed endpoint '/api/live/battleship/negotiate'
+2023-04-26 22:41:49.698 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7196/api/live/battleship/negotiate?negotiateVersion=1 - 0 - 200 316 application/json 0.2490ms
+2023-04-26 22:41:49.705 +03:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=GH-pF7NuEKXyFRICJf1U6w - -
+2023-04-26 22:41:49.705 +03:00 [INF] CORS policy execution successful.
+2023-04-26 22:41:49.705 +03:00 [INF] Executing endpoint '/api/live/battleship'
+2023-04-26 22:42:12.017 +03:00 [INF] Executed endpoint '/api/live/battleship'
+2023-04-26 22:42:12.018 +03:00 [INF] Request finished HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=kl_2vtqOCqO_qRIMonrmHw - - - 200 - - 631574.2948ms
+2023-04-26 22:42:12.024 +03:00 [INF] Executed endpoint '/api/live/battleship'
+2023-04-26 22:42:12.024 +03:00 [INF] Executed endpoint '/api/live/battleship'
+2023-04-26 22:42:12.024 +03:00 [INF] Request finished HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=LngZvgtNxfHWAJTxOn0alw - - - 200 - - 105360.3969ms
+2023-04-26 22:42:12.024 +03:00 [INF] Request finished HTTP/2 CONNECT https://localhost:7196/api/live/battleship?id=GH-pF7NuEKXyFRICJf1U6w - - - 200 - - 22318.8932ms

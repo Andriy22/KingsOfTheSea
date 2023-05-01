@@ -4,37 +4,40 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace Persistence
+namespace Persistence;
+
+public class DataContext : IdentityDbContext, IDataContext
 {
-    public class DataContext : IdentityDbContext, IDataContext
+    public DataContext(DbContextOptions<DataContext> options)
+        : base(options)
     {
-        public new DbSet<AppUser> Users { get; set; }
-        public DbSet<Language> Languages { get; set; }
+    }
 
-        public DataContext(DbContextOptions<DataContext> options)
-            : base(options) { }
+    public new DbSet<Player> Users { get; set; }
+    public DbSet<RefreshToken> RefreshTokens { get; set; }
+    public DbSet<Stats> Stats { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder builder)
+    protected override void OnModelCreating(ModelBuilder builder)
+    {
+        base.OnModelCreating(builder);
+
+        builder.Entity<IdentityRole>().HasData(new List<IdentityRole>
         {
-            base.OnModelCreating(builder);
+            new()
+            {
+                ConcurrencyStamp = Guid.NewGuid().ToString(),
+                Id = Guid.NewGuid().ToString(),
+                Name = "User",
+                NormalizedName = "USER"
+            },
 
-            builder.Entity<IdentityRole>().HasData(new List<IdentityRole> {
-                new IdentityRole
-                {
-                    ConcurrencyStamp = Guid.NewGuid().ToString(),
-                    Id = Guid.NewGuid().ToString(),
-                    Name = "User",
-                    NormalizedName = "USER",
-                },
-
-                new IdentityRole
-                {
-                    ConcurrencyStamp = Guid.NewGuid().ToString(),
-                    Id = Guid.NewGuid().ToString(),
-                    Name = "Admin",
-                    NormalizedName = "ADMIN",
-                }
-            });
-        }
+            new()
+            {
+                ConcurrencyStamp = Guid.NewGuid().ToString(),
+                Id = Guid.NewGuid().ToString(),
+                Name = "Admin",
+                NormalizedName = "ADMIN"
+            }
+        });
     }
 }

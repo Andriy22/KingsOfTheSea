@@ -1,12 +1,12 @@
 ﻿using Domain;
 using Microsoft.EntityFrameworkCore;
 
-namespace Application.Interfaces
+namespace Application.Interfaces;
+
+public interface IDataContext
 {
-    public interface IDataContext
-    {
-        DbSet<AppUser> Users { get; set; }
-        DbSet<Domain.Language> Languages { get; set; }
-        Task<int> SaveChangesAsync(CancellationToken cancellationToken);
-    }
+    DbSet<Player> Users { get; set; }
+    DbSet<Domain.RefreshToken> RefreshTokens { get; set; }
+    DbSet<Domain.Stats> Stats { get; set; }
+    Task<int> SaveChangesAsync(CancellationToken cancellationToken);
 }

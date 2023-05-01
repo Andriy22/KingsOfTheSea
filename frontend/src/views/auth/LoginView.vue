@@ -10,29 +10,38 @@
       <v-card-title class="headline text-center">Авторизація</v-card-title>
       <v-divider></v-divider>
       <v-card-text>
-        <v-col class="mb-0 mt-0" cols="10" offset="1">
-          <v-text-field
-            :rules="emailRules"
-            density="comfortable"
-            label="Введіть Email"
-            prepend-icon="mdi-email-outline"
-            variant="outlined"
-          ></v-text-field>
-        </v-col>
-        <v-col class="mb-0 mt-0" cols="10" offset="1">
-          <v-text-field
-            :rules="passRules"
-            density="comfortable"
-            label="Введіть пароль"
-            prepend-icon="mdi-lock"
-            variant="outlined"
-          ></v-text-field>
-        </v-col>
-        <v-col cols="10" offset="1">
-          <v-btn :loading="isLoading" width="20%" @click="onLogin"
-            >Ввійти
-          </v-btn>
-        </v-col>
+        <v-form v-model="isValid">
+          <v-col class="mb-0 mt-0" cols="10" offset="1">
+            <v-text-field
+              v-model="email"
+              :rules="emailRules"
+              density="comfortable"
+              label="Введіть Email"
+              prepend-icon="mdi-email-outline"
+              variant="outlined"
+            ></v-text-field>
+          </v-col>
+          <v-col class="mb-0 mt-0" cols="10" offset="1">
+            <v-text-field
+              v-model="password"
+              :rules="passRules"
+              density="comfortable"
+              label="Введіть пароль"
+              prepend-icon="mdi-lock"
+              type="password"
+              variant="outlined"
+            ></v-text-field>
+          </v-col>
+          <v-col cols="10" offset="1">
+            <v-btn
+              :disabled="!isValid"
+              :loading="$store.state.auth.status.isLoading"
+              width="20%"
+              @click="onLogin"
+              >Ввійти
+            </v-btn>
+          </v-col>
+        </v-form>
       </v-card-text>
     </v-card>
   </v-container>
@@ -42,6 +51,9 @@ export default {
   data: () => ({
     isLoading: false,
     passRules: [(value) => !!value || "Поле обов'язкове."],
+    password: "",
+    email: "",
+    isValid: false,
     emailRules: [
       (value) => !!value || "Поле обов'язкове.",
       (value) => {
@@ -51,12 +63,16 @@ export default {
       },
     ],
   }),
+  mounted() {
+    this.$store.dispatch("auth/logout");
+  },
   methods: {
     onLogin() {
       this.isLoading = true;
-      setTimeout(() => {
-        this.isLoading = false;
-      }, 3000);
+      this.$store.dispatch("auth/login", {
+        email: this.email,
+        password: this.password,
+      });
     },
   },
 };

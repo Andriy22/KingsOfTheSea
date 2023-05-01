@@ -1,14 +1,9 @@
 ﻿using Application.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Application.Interfaces
+namespace Application.Interfaces;
+
+public interface IRazorRenderService
 {
-    public interface IRazorRenderService
-    {
-        public Task<string> RenderEmailConfirmationAsync(EmailConfirmationVM model);
-    }
+    public Task<string> RenderEmailConfirmationAsync(EmailConfirmationVM model);
+    public Task<string> RenderEmailConfirmedViewAsync();
 }

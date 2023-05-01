@@ -1,10 +1,11 @@
 ﻿using AutoMapper;
 
-namespace Application.Common.Mappings
+namespace Application.Common.Mappings;
+
+public interface IMapWith<T>
 {
-    public interface IMapWith<T>
+    void Mapping(Profile profile)
     {
-        void Mapping(Profile profile) =>
-            profile.CreateMap(typeof(T), GetType());
+        profile.CreateMap(typeof(T), GetType());
     }
 }

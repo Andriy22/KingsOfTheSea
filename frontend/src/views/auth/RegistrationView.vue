@@ -10,56 +10,61 @@
       <v-card-title class="headline text-center">Реєстрація</v-card-title>
       <v-divider></v-divider>
       <v-card-text>
-        <v-col class="mb-0 mt-0" cols="10" offset="1">
-          <v-text-field
-            v-model="email"
-            :rules="emailRules"
-            density="comfortable"
-            label="Введіть Email"
-            prepend-icon="mdi-email-outline"
-            variant="outlined"
-          ></v-text-field>
-        </v-col>
+        <v-form v-model="isValid">
+          <v-col class="mb-0 mt-0" cols="10" offset="1">
+            <v-text-field
+              v-model="email"
+              :rules="emailRules"
+              density="comfortable"
+              label="Введіть Email"
+              prepend-icon="mdi-email-outline"
+              variant="outlined"
+            ></v-text-field>
+          </v-col>
 
-        <v-col class="mb-0 mt-0" cols="10" offset="1">
-          <v-text-field
-            v-model="nickname"
-            :rules="nicknameRules"
-            density="comfortable"
-            label="Введіть nickname"
-            prepend-icon="mdi-account-star"
-            variant="outlined"
-          ></v-text-field>
-        </v-col>
+          <v-col class="mb-0 mt-0" cols="10" offset="1">
+            <v-text-field
+              v-model="nickname"
+              :rules="nicknameRules"
+              density="comfortable"
+              label="Введіть nickname"
+              prepend-icon="mdi-account-star"
+              variant="outlined"
+            ></v-text-field>
+          </v-col>
 
-        <v-col class="mb-0 mt-0" cols="10" offset="1">
-          <v-text-field
-            v-model="password"
-            :rules="passRules"
-            density="comfortable"
-            label="Введіть пароль"
-            prepend-icon="mdi-lock"
-            type="password"
-            variant="outlined"
-          ></v-text-field>
-        </v-col>
+          <v-col class="mb-0 mt-0" cols="10" offset="1">
+            <v-text-field
+              v-model="password"
+              :rules="passRules"
+              density="comfortable"
+              label="Введіть пароль"
+              prepend-icon="mdi-lock"
+              type="password"
+              variant="outlined"
+            ></v-text-field>
+          </v-col>
 
-        <v-col class="mb-0 mt-0" cols="10" offset="1">
-          <v-text-field
-            v-model="confirmationPassword"
-            :rules="confirmPasswordRules"
-            density="comfortable"
-            label="Підтвердіть пароль"
-            prepend-icon="mdi-lock"
-            type="password"
-            variant="outlined"
-          ></v-text-field>
-        </v-col>
-        <v-col cols="10" offset="1">
-          <v-btn :loading="isLoading" @click="onRegister"
-            >Зареєструватися
-          </v-btn>
-        </v-col>
+          <v-col class="mb-0 mt-0" cols="10" offset="1">
+            <v-text-field
+              v-model="confirmationPassword"
+              :rules="confirmPasswordRules"
+              density="comfortable"
+              label="Підтвердіть пароль"
+              prepend-icon="mdi-lock"
+              type="password"
+              variant="outlined"
+            ></v-text-field>
+          </v-col>
+          <v-col cols="10" offset="1">
+            <v-btn
+              :disabled="!isValid"
+              :loading="$store.state.account.requests.createUser.isLoading"
+              @click="onRegister"
+              >Зареєструватися
+            </v-btn>
+          </v-col>
+        </v-form>
       </v-card-text>
     </v-card>
   </v-container>
@@ -67,10 +72,10 @@
 <script>
 export default {
   data: () => ({
-    isLoading: false,
     email: "",
     password: "",
     confirmationPassword: "",
+    isValid: false,
     nickname: "",
     passRules: [(value) => !!value || "Поле обов'язкове."],
     confirmPasswordRules: [(v) => !!v || "Поле обов'язкове."],
@@ -91,10 +96,12 @@ export default {
   }),
   methods: {
     onRegister() {
-      this.isLoading = true;
-      setTimeout(() => {
-        this.isLoading = false;
-      }, 3000);
+      this.$store.dispatch("account/createUser", {
+        email: this.email,
+        nickname: this.nickname,
+        password: this.password,
+        passwordConfirmation: this.confirmationPassword,
+      });
     },
   },
 };

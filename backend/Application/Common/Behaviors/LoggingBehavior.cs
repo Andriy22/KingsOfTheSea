@@ -2,30 +2,31 @@
 using MediatR;
 using Serilog;
 
-namespace Application.Common.Behaviors
+namespace Application.Common.Behaviors;
+
+public class LoggingBehavior<TRequest, TResponse>
+    : IPipelineBehavior<TRequest, TResponse> where TRequest
+    : IRequest<TResponse>
 {
-    public class LoggingBehavior<TRequest, TResponse>
-           : IPipelineBehavior<TRequest, TResponse> where TRequest
-           : IRequest<TResponse>
+    private readonly ICurrentUserService _currentUserService;
+
+    public LoggingBehavior(ICurrentUserService currentUserService)
     {
-        ICurrentUserService _currentUserService;
+        _currentUserService = currentUserService;
+    }
 
-        public LoggingBehavior(ICurrentUserService currentUserService) =>
-            _currentUserService = currentUserService;
+    public async Task<TResponse> Handle(TRequest request,
+        RequestHandlerDelegate<TResponse> next,
+        CancellationToken cancellationToken)
+    {
+        var requestName = typeof(TRequest).Name;
+        var userId = _currentUserService.UserId;
 
-        public async Task<TResponse> Handle(TRequest request,
-                RequestHandlerDelegate<TResponse> next,
-                CancellationToken cancellationToken)
-        {
-            var requestName = typeof(TRequest).Name;
-            var userId = _currentUserService.UserId;
+        Log.Information("Notes Request: {Name} {@UserId} {@Request}",
+            requestName, userId, request);
 
-            Log.Information("Notes Request: {Name} {@UserId} {@Request}",
-                requestName, userId, request);
+        var response = await next();
 
-            var response = await next();
-
-            return response;
-        }
+        return response;
     }
 }
